@@ -49,33 +49,33 @@ def draw_upside_down_wall(rectangle, n, window):
     and n is nonnegative.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     Some tests are already written for you (above).
     # ------------------------------------------------------------------
-    original_x1 = rectangle.corner_1.x
-    original_y1 = rectangle.corner_1.y
-    original_x2 = rectangle.corner_2.x
-    original_y2 = rectangle.corner_2.y
-
-    x1 = original_x1
-    y1 = original_y1
-    x2 = original_x2
-    y2 = original_y2
+    x1 = rectangle.corner_1.x
+    y1 = rectangle.corner_1.y
+    x2 = rectangle.corner_2.x
+    y2 = rectangle.corner_2.y
 
     width = x2 - x1
     height = y2 - y1
 
     for k in range(n):
         for j in range(k + 1):
-            point1 = rg.Point(x1 - ((width * j) * 0.5), y1 - ((height * j) * 0.5))
-            point2 = rg.Point(x2 - (width * j), y1 - (height * j))
+            new_x1 = x1 - ((width * j) * 0.5)
+            new_y1 = y1 - (height * j)
+            new_x2 = x2 - ((width * j) * 0.5)
+            new_y2 = y2 - (height * j)
+
+            point1 = rg.Point(new_x1, new_y1)
+            point2 = rg.Point(new_x2, new_y2)
             rectangle = rg.Rectangle(point1, point2)
             rectangle.attach_to(window)
             for i in range(j):
-                x1 = x1 + width
-                x2 = x2 + width
-                new_point1 = rg.Point(x1, y1)
-                new_point2 = rg.Point(x2,y2)
+                new_x1 = new_x1 + width
+                new_x2 = new_x2 + width
+                new_point1 = rg.Point(new_x1, new_y1)
+                new_point2 = rg.Point(new_x2, new_y2)
                 new_rectangle = rg.Rectangle(new_point1, new_point2)
                 new_rectangle.attach_to(window)
 
