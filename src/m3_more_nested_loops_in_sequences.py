@@ -78,7 +78,7 @@ def largest_number(seq_seq):
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
-    biggest_number = 0
+    biggest_number = None
     for k in range(len(seq_seq)):
         for j in range(len(seq_seq[k])):
             if seq_seq[k][j] > biggest_number:
