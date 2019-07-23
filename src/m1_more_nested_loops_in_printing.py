@@ -172,7 +172,7 @@ def vee(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -184,7 +184,7 @@ def vee(r):
         for j in range(k):
             print(' ', end='')
         for i in range(r - k):
-            if i == (r - k -1):
+            if i == (r - k - 1):
                 print(i + 1, end='-')
                 for h in range(r - k):
                     print(r - k - h, end='')
@@ -240,7 +240,7 @@ def numbers_constant_forward(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: What loop structure do you need for this problem?
@@ -250,7 +250,12 @@ def numbers_constant_forward(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
-
+    for k in range(r):
+        for j in range(maxnum):
+            for i in range(n):
+                print(j + 1, end='')
+            print(' ', end='')
+        print()
 
 def run_test_numbers_constant_backwards():
     """ Tests the    numbers_constant_backwards    function. """
