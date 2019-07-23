@@ -75,7 +75,7 @@ def largest_number(seq_seq):
     where each subsequence contains only numbers.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     biggest_number = None
@@ -89,7 +89,6 @@ def largest_number(seq_seq):
                     biggest_number = seq_seq[k][j]
                     return biggest_number
     return None
-
 
 
 def run_test_largest_negative_number():
@@ -106,6 +105,23 @@ def run_test_largest_negative_number():
     print('Testing the   LARGEST_NEGATIVE_NUMBER   function:')
     print('-------------------------------------------------')
 
+    # Test 1:
+    expected = -13
+    answer = largest_negative_number([(3, 1, 4),
+                             (-13, 10, 11, 7, 10),
+                             [1, 2, 3, 4]])
+    print('Expected and actual are:', expected, answer)
+
+    # Test 2:
+    expected = -1111111111111111
+    answer = largest_negative_number(([], [-1111111111111111], []))
+    print('Expected and actual are:', expected, answer)
+
+    # Test 3:
+    expected = None
+    answer = largest_negative_number(([], [], []))
+    print('Expected and actual are:', expected, answer)
+    
 
 def largest_negative_number(seq_seq):
     """
