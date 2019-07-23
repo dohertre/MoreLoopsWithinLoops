@@ -78,6 +78,11 @@ def largest_number(seq_seq):
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+    biggest_number = 0
+    for k in range(len(seq_seq)):
+        if len(seq_seq[k]) > 0:
+            biggest_number = seq_seq[q][0]
+            
 
 
 def run_test_largest_negative_number():
