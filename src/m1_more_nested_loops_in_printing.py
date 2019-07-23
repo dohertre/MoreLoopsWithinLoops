@@ -184,11 +184,11 @@ def vee(r):
         for j in range(k):
             print(' ', end='')
         for i in range(r - k):
-            if i == (r - k):
+            if i == (r - k -1):
                 print(i + 1, end='-')
                 for h in range(r - k):
                     print(r - k - h, end='')
-            if i < (r - k):
+            if i < (r - k - 1):
                 print(i + 1, end='')
 
         print()
