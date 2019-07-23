@@ -74,10 +74,10 @@ def triangle_right_justified(r):
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
     for k in range(r):
-        for j in range(k):
-            print('', end= '')
+        for j in range(r - k):
+            print('', end='')
         for i in range(k):
-            print(j + 1, end= '')
+            print(j + 1, end='')
         print()
 
 def run_test_triangle_upside_down():
