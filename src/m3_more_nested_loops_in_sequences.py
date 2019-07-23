@@ -163,6 +163,7 @@ def largest_negative_number(seq_seq):
                 biggest_number = seq_seq[h][j]
     return biggest_number
 
+
 def run_test_first_is_elsewhere_too():
     """ Tests the    first_is_elsewhere_too    function. """
     # ------------------------------------------------------------------
@@ -409,6 +410,11 @@ def first_is_elsewhere_too(seq_seq):
     #   in this problem, as doing so would defeat the goal of providing
     #   practice at loops within loops (within loops within ...)
     # ------------------------------------------------------------------
+    for k in range(len(seq_seq)):
+        for j in range(len(seq_seq[k])):
+            if seq_seq[k][j] == seq_seq[0][j]:
+                return True
+    return False
 
 
 # ----------------------------------------------------------------------
