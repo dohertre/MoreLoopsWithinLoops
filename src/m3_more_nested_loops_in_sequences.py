@@ -88,7 +88,6 @@ def largest_number(seq_seq):
             if seq_seq[k][j] > biggest_number:
                 biggest_number = seq_seq[k][j]
                 return biggest_number
-    return None
 
 
 def run_test_largest_negative_number():
