@@ -10,7 +10,7 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 def main():
     """ Calls the other functions to test them. """
     run_test_largest_number()
-    run_test_largest_negative_number()
+    # run_test_largest_negative_number()
     run_test_first_is_elsewhere_too()
 
 
@@ -83,11 +83,11 @@ def largest_number(seq_seq):
         if len(seq_seq[k]) > 0:
             biggest_number = seq_seq[k][0]
             return biggest_number
-        else:
-            for j in range(len(seq_seq[k])):
-                if seq_seq[k][j] > biggest_number:
-                    biggest_number = seq_seq[k][j]
-                    return biggest_number
+    for k in range(len(seq_seq)):
+        for j in range(len(seq_seq[k])):
+            if seq_seq[k][j] > biggest_number:
+                biggest_number = seq_seq[k][j]
+                return biggest_number
     return None
 
 
@@ -121,7 +121,7 @@ def run_test_largest_negative_number():
     expected = None
     answer = largest_negative_number(([], [], []))
     print('Expected and actual are:', expected, answer)
-    
+
 
 def largest_negative_number(seq_seq):
     """
@@ -153,7 +153,17 @@ def largest_negative_number(seq_seq):
     #   being constructed (so the SPACE allowed is limited to the
     #   give sequence of sequences plus any non-list variables you want).
     # ------------------------------------------------------------------
-
+    biggest_neq_number = None
+    for k in range(len(seq_seq)):
+        if len(seq_seq[k]) < 0:
+            biggest_neg_number = seq_seq[k][0]
+            return biggest_neg_number
+        else:
+            for j in range(len(seq_seq[k])):
+                if seq_seq[k][j] < biggest_neq_number:
+                    biggest_neg_number = seq_seq[k][j]
+                    return biggest_neg_number
+    return None
 
 def run_test_first_is_elsewhere_too():
     """ Tests the    first_is_elsewhere_too    function. """
