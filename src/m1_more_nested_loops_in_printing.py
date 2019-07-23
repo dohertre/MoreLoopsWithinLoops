@@ -77,7 +77,7 @@ def triangle_right_justified(r):
         for j in range(r - k):
             print('', end='')
         for i in range(k):
-            print(j + 1, end='')
+            print(i + 1, end='')
         print()
 
 def run_test_triangle_upside_down():
