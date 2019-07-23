@@ -82,6 +82,7 @@ def largest_number(seq_seq):
     for k in range(len(seq_seq)):
         if len(seq_seq[k]) > 0:
             biggest_number = seq_seq[k][0]
+
     for h in range(len(seq_seq)):
         for j in range(len(seq_seq[h])):
             if seq_seq[h][j] > biggest_number:
@@ -144,24 +145,23 @@ def largest_negative_number(seq_seq):
     where each subsequence contains only numbers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # CHALLENGE: Try to solve this problem with no additional sequences
     #   being constructed (so the SPACE allowed is limited to the
     #   give sequence of sequences plus any non-list variables you want).
     # ------------------------------------------------------------------
-    biggest_neq_number = None
+    biggest_number = None
     for k in range(len(seq_seq)):
         if len(seq_seq[k]) < 0:
-            biggest_neg_number = seq_seq[k][0]
-            return biggest_neg_number
-        else:
-            for j in range(len(seq_seq[k])):
-                if seq_seq[k][j] < biggest_neq_number:
-                    biggest_neg_number = seq_seq[k][j]
-                    return biggest_neg_number
-    return None
+            biggest_number = seq_seq[k][0]
+
+    for h in range(len(seq_seq)):
+        for j in range(len(seq_seq[h])):
+            if seq_seq[h][j] < biggest_number:
+                biggest_number = seq_seq[h][j]
+    return biggest_number
 
 def run_test_first_is_elsewhere_too():
     """ Tests the    first_is_elsewhere_too    function. """
