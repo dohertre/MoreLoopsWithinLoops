@@ -82,12 +82,11 @@ def largest_number(seq_seq):
     for k in range(len(seq_seq)):
         if len(seq_seq[k]) > 0:
             biggest_number = seq_seq[k][0]
-            return biggest_number
-    for k in range(len(seq_seq)):
-        for j in range(len(seq_seq[k])):
-            if seq_seq[k][j] > biggest_number:
-                biggest_number = seq_seq[k][j]
-                return biggest_number
+    for h in range(len(seq_seq)):
+        for j in range(len(seq_seq[h])):
+            if seq_seq[h][j] > biggest_number:
+                biggest_number = seq_seq[h][j]
+    return biggest_number
 
 
 def run_test_largest_negative_number():
